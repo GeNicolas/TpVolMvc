@@ -11,12 +11,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Information Client</title>
 
-<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
-<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
-
-	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
 </head>
