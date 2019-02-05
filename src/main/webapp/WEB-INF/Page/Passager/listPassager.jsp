@@ -114,7 +114,6 @@
 	<table class="table">
 	
 	<tr>
-			<th>type</th>
 			<th>Identifiant</th>
 			<th>Civilite</th>
 			<th>Prenom</th>
@@ -133,16 +132,16 @@
 			<tr>
 				
 				<td>${c.id}</td>
-				<td>${c.civilite}
+				<td>${c.titre}</td>
 				<td>${c.prenom}</td>
 				<td>${c.nom}</td>
-				<td>${c.adresse.numero}&nbsp;${c.adresse.rue}</td>
+				<td>${c.adresse.adresse}&nbsp;${c.adresse.pays}</td>
 				<td>${c.adresse.codePostal}</td>
 				<td>${c.adresse.ville}</td>
-				<td>${c.numeroTel}</td>
-				<td>${c.numeroFax}</td>
+				<td>${c.numerotel}</td>
+				<td>${c.numerofax}</td>
 				<td>${c.email}</td>
-				<td>${c.reservation}</td>
+				<td>${clientRepo.findByIdWithReservation(c.id).get().getReservation()}$</td>
 				<td><a class="btn btn-info" href="edit?id=${c.id}">modifier</a></td>
 				<td><a class="btn btn-danger" href="delete?id=${c.id}">supprimer</a></td>
 	</tr>

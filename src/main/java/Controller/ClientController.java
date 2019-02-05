@@ -28,7 +28,9 @@ public class ClientController {
 	public String list(Model model) {
 		
 		model.addAttribute("client", clientRepo.findAll());
-		
+		System.out.println("------------------------------------------------------------------");
+		System.out.println(clientRepo.findAll());
+		model.addAttribute("clientRepo", clientRepo);
 		return"Passager/listPassager";
 	}
 	
