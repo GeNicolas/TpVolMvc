@@ -27,9 +27,9 @@ public class ClientController {
 	@GetMapping({"/","/list"})
 	public String list(Model model) {
 		
-		model.addAttribute("clients", clientRepo.findAll());
+		model.addAttribute("client", clientRepo.findAll());
 		
-		return"Passager/Passager";
+		return"Passager/listPassager";
 	}
 	
 	@GetMapping

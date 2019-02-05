@@ -119,17 +119,17 @@
 	
 	<tr>
 			<th>type</th>
-			<th><spring:message code="client.id"></spring:message></th>
-			<th><spring:message code="client.civilite"></spring:message></th>
-			<th><spring:message code="client.prenom"></spring:message></th>
-			<th><spring:message code="client.nom"></spring:message></th>
-			<th><spring:message code="client.adresse"></spring:message></th>
-			<th><spring:message code="client.adresse.codePostal"></spring:message></th>
-			<th><spring:message code="client.adresse.ville"></spring:message></th>
-			<th><spring:message code="client.numeroTel"></spring:message></th>
-			<th><spring:message code="client.numeroFax"></spring:message></th>
-			<th><spring:message code="client.email"></spring:message></th>
-			<th><spring:message code="client.reservation"></spring:message></th>
+			<th>Identifiant</th>
+			<th>Civilite</th>
+			<th>Prenom</th>
+			<th>Nom</th>
+			<th>Adresse</th>
+			<th>codePostal</th>
+			<th>ville</th>
+			<th>numeroTel</th>
+			<th>numeroFax</th>
+			<th>email</th>
+			<th>reservation</th>
 			<th></th>
 			<th></th>
 		</tr>
