@@ -27,6 +27,7 @@
 			
 				<th>Compagnie Aerienne du Vol</th>
 				<th>Escale possible </th>
+				<th>Reservations </th>
 				
 			</tr>
 			<c:forEach var="v" items="${vol}">
@@ -38,6 +39,7 @@
 					<td> ${v.AeroportArrivee}</td>
 					<td> ${v.compagnieAerienneVol}</td>
 					<td> ${v.escale}</td>
+					<td> ${v.reservations}</td>
 					
 					<td><a class="btn btn-info"
 					href="edit?id=${v.id}">modifier</a></td>

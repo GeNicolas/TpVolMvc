@@ -14,6 +14,40 @@
 <body class="container">
 		<h1> edition des vols</h1>
 		
+		<form:form method="get" action="${action}" modelAttribute="vol">
+		<form:hidden path="version" />
+		<div class="form-group">
+			<form:label path="id">identifiant</form:label>
+			<form:input path="id" cssClass="form-control" readonly="true" />
+		</div>
+		<div class="form-group">
+			<form:label path="aeroportDepart">Aeroport Depart</form:label>
+			<form:input path="aeroportDepart" cssClass="form-control" />
+			<form:errors path="aeroportDepart"></form:errors>
+		</div>
+		<div class="form-group">
+			<form:label path="aeroportArrivee">Aeroport Arrivee</form:label>
+			<form:input path="aeroportArrivee" cssClass="form-control" />
+			<form:errors path="aeroportArrivee"></form:errors>
+		</div>
+		<div class="form-group">
+			<form:label path="dateDepart">date de départ</form:label>
+			<form:input type="date" path="dateDepart" cssClass="form-control" />
+			<form:errors path="dateDepart"></form:errors>
+		</div>
+		<div class="form-group">
+			<form:label path="dateArrivee">date d'arrivee</form:label>
+			<form:input type="date" path="dateArrivee" cssClass="form-control" />
+			<form:errors path="dateArrivee"></form:errors>
+		</div>
+		<div>
+			<button class="btn btn-success" type="submit">enregistrer vol</button>
+			<a href="list" class="btn btn-warning">annuler</a>
+		</div>
+		
+		
+		</form:form>
+		<%-- 
 		<div id="booking" class="section">
 		<div class="section-center">
 			<div class="container">
@@ -100,6 +134,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --%>
 </body>
 </html>

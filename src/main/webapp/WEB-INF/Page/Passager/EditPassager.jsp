@@ -14,6 +14,70 @@
 <body class="container">
 <h1> edition des clients</h1>
 
+		<form:form method="get" action="${action}" modelAttribute="Client"> 
+				<form:hidden path="version"/>
+				
+				<form:label path="id">identifiant</form:label>
+			<form:input path="id" cssClass="form-control" readonly="true" />
+		<div>
+		<div class="form-group">
+			<form:label path="civilite"></form:label>
+			<form:select cssClass="form-control" path="civilite"
+				items="${civilites}" itemLabel="texte">
+			</form:select>
+		</div>
+		<div class="form-group">
+			<form:label path="prenom">prenom</form:label>
+			<form:input path="prenom" cssClass="form-control" />
+			<form:errors path="prenom"></form:errors>
+		</div>
+		<div class="form-group">
+			<form:label path="nom">nom</form:label>
+			<form:input path="nom" cssClass="form-control" />
+			<form:errors path="nom"></form:errors>
+		</div>
+	
+		<div class="form-group">
+			<form:label path="numero">numero</form:label>
+			<form:input type="number" path="numero"
+				cssClass="form-control" />
+		</div>
+		<div class="form-group">
+			<form:label path="rue">rue</form:label>
+			<form:input path="rue" cssClass="form-control" />
+		</div>
+		<div class="form-group">
+			<form:label path="codePostal">code postal</form:label>
+			<form:input path="codePostal" cssClass="form-control" />
+		</div>
+		<div class="form-group">
+			<form:label path="ville">ville</form:label>
+			<form:input path="ville" cssClass="form-control" />
+		</div>
+		<div class="form-group">
+			<form:label path="numeroTel">numero de telephone</form:label>
+			<form:input type="number" path="numeroTel"
+				cssClass="form-control" />
+		</div>
+			<div class="form-group">
+			<form:label path="numeroFax">numero de fax</form:label>
+			<form:input type="number" path="numeroFax"
+				cssClass="form-control" />
+		</div>
+		<div class="form-group">
+			<form:label path="email">email</form:label>
+			<form:input path="email" cssClass="form-control" />
+			<form:errors path="email"></form:errors>
+		</div>
+		<div>
+			<button class="btn btn-success" type="submit">enregistrer</button>
+			<a href="list" class="btn btn-warning">annuler</a>
+		</div>
+			</div>	
+				</form:form>
+
+
+<%-- 
 <div id="booking" class="section">
 		<div class="section-center">
 			<div class="container">
@@ -103,6 +167,6 @@
 				
 			</div>
 		</div>
-	
+	 --%>
 </body>
 </html>
