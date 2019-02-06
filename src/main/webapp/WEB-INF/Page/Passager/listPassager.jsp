@@ -3,6 +3,8 @@
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,10 +29,9 @@
 	<table class="table">
 	
 	<tr>
-			<th>type</th>
 			<th>client id</th>
 			<th>civilite</th>
-			<th>prenom</th>
+			<th>prenom/siret</th>
 			<th>nom</th>
 			<th>adresse</th>
 			<th>codePostal</th>
@@ -46,8 +47,22 @@
 			<tr>
 				
 				<td>${c.id}</td>
-				<td>${c.titre}</td>
-				<td>${c.prenom}</td>
+				<c:choose>
+					<c:when test="${c.getClass().simpleName=='ClientMoral'}">
+						<td>${c.titre.getTitre_moral()}</td>
+					</c:when>
+					<c:otherwise>
+						<td>${c.titre}</td>
+					</c:otherwise>
+				</c:choose>
+				<c:choose>
+					<c:when test="${c.getClass().simpleName=='ClientMoral'}">
+						<td>${c.getSiret()}</td>
+					</c:when>
+					<c:otherwise>
+						<td>${c.prenom}</td>
+					</c:otherwise>
+				</c:choose>
 				<td>${c.nom}</td>
 				<td>${c.adresse.adresse}&nbsp;${c.adresse.pays}</td>
 				<td>${c.adresse.codePostal}</td>
@@ -55,7 +70,12 @@
 				<td>${c.numerotel}</td>
 				<td>${c.numerofax}</td>
 				<td>${c.email}</td>
-				<td>${clientRepo.findByIdWithReservation(c.id).get().getReservation()}$</td>
+				
+				<td>
+					<form:select path="client">
+						<form:options items="${clientRepo.findByIdWithReservation(c.id).get().getReservation()}" itemLabel="numero" itemValue="numero"/>
+					</form:select>
+				</td>
 				<td><a class="btn btn-info" href="edit?id=${c.id}">modifier</a></td>
 				<td><a class="btn btn-danger" href="delete?id=${c.id}">supprimer</a></td>
 	</tr>
