@@ -39,7 +39,7 @@
 						</form:select>
 					</c:when>
 					<c:otherwise>
-						<form:label path="titre.titre_moral">Titre</form:label>
+						<form:label path="titre.titre_moral">Titre Moral</form:label>
 						<form:input path="titre.titre_moral" cssClass="form-control" />
 						<form:errors path="titre.titre_moral"></form:errors>
 					</c:otherwise>

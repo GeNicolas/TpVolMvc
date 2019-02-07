@@ -48,7 +48,7 @@ public class ClientController {
 	@GetMapping("/edit")
 	public String edit(@RequestParam(name="id", required=true) Long id,Model model) {
 		
-		return goEdit(clientRepo.findById(id), model);
+		return goEdit(clientRepo.findById(id).get(), model);
 	}
 	
 	private String goEdit( Optional<Client> client, Model model) {
