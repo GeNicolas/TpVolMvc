@@ -46,18 +46,18 @@ public class ClientController {
 		return goEdit(clientRepo.findById(id), model);
 	}
 	
-	private String goEdit( Optional<Client> optional, Model model) {
+	private String goEdit( Optional<Client> client, Model model) {
 		
-		model.addAttribute(optional);
+		model.addAttribute("client", client);
 		
-		return"";
+		return"Passager/EditPassager";
 	}
 	
 	private String goEdit( Client client, Model model) {
 		
 		model.addAttribute(client);
 		
-		return"";
+		return"Passager/EditPassager";
 	}
 	
 	@GetMapping("/addClientEI")

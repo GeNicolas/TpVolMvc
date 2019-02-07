@@ -14,16 +14,16 @@
 <body class="container">
 <h1> edition des clients</h1>
 
-		<form:form method="get" action="${action}" modelAttribute="Client"> 
+		<form:form method="get" action="${action}" modelAttribute="client"> 
 				<form:hidden path="version"/>
 				
 				<form:label path="id">identifiant</form:label>
 			<form:input path="id" cssClass="form-control" readonly="true" />
 		<div>
 		<div class="form-group">
-			<form:label path="civilite"></form:label>
-			<form:select cssClass="form-control" path="civilite"
-				items="${civilites}" itemLabel="texte">
+			<form:label path="titre">Titre</form:label>
+			<form:select cssClass="form-control" path="titre"
+				items="${titre}" itemLabel="texte" itemValue="texte">
 			</form:select>
 		</div>
 		<div class="form-group">
@@ -37,31 +37,27 @@
 			<form:errors path="nom"></form:errors>
 		</div>
 	
+		
 		<div class="form-group">
-			<form:label path="numero">numero</form:label>
-			<form:input type="number" path="numero"
-				cssClass="form-control" />
+			<form:label path="adresse.adresse">rue</form:label>
+			<form:input path="adresse.adresse" cssClass="form-control" />
 		</div>
 		<div class="form-group">
-			<form:label path="rue">rue</form:label>
-			<form:input path="rue" cssClass="form-control" />
+			<form:label path="adresse.codePostal">code postal</form:label>
+			<form:input path="adresse.codePostal" cssClass="form-control" />
 		</div>
 		<div class="form-group">
-			<form:label path="codePostal">code postal</form:label>
-			<form:input path="codePostal" cssClass="form-control" />
+			<form:label path="adresse.ville">ville</form:label>
+			<form:input path="adresse.ville" cssClass="form-control" />
 		</div>
 		<div class="form-group">
-			<form:label path="ville">ville</form:label>
-			<form:input path="ville" cssClass="form-control" />
-		</div>
-		<div class="form-group">
-			<form:label path="numeroTel">numero de telephone</form:label>
-			<form:input type="number" path="numeroTel"
+			<form:label path="numerotel">numero de telephone</form:label>
+			<form:input type="number" path="numerotel"
 				cssClass="form-control" />
 		</div>
 			<div class="form-group">
-			<form:label path="numeroFax">numero de fax</form:label>
-			<form:input type="number" path="numeroFax"
+			<form:label path="numerofax">numero de fax</form:label>
+			<form:input type="number" path="numerofax"
 				cssClass="form-control" />
 		</div>
 		<div class="form-group">
