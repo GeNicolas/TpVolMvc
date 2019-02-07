@@ -14,21 +14,23 @@
 <body class="container">
 		<h1> edition des vols</h1>
 		
-		<form:form method="get" action="${action}" modelAttribute="vol">
+		<form:form method="get" action="save" modelAttribute="vol">
 		<form:hidden path="version" />
 		<div class="form-group">
 			<form:label path="id">identifiant</form:label>
 			<form:input path="id" cssClass="form-control" readonly="true" />
 		</div>
 		<div class="form-group">
-			<form:label path="aeroportDepart">Aeroport Depart</form:label>
-			<form:input path="aeroportDepart" cssClass="form-control" />
-			<form:errors path="aeroportDepart"></form:errors>
+			<form:label path="aeroportDepart.id" >Aeroport Depart</form:label>
+				<form:select path="aeroportDepart.id">
+					<form:options items="${aeroport}" itemLabel="nom" itemValue="nom"/>
+				</form:select>
 		</div>
 		<div class="form-group">
-			<form:label path="aeroportArrivee">Aeroport Arrivee</form:label>
-			<form:input path="aeroportArrivee" cssClass="form-control" />
-			<form:errors path="aeroportArrivee"></form:errors>
+			<form:label path="aeroportArrivee.id">Aeroport Arrivee</form:label>
+				<form:select path="aeroportDepart.id">
+					<form:options items="${aeroport}" itemLabel="nom" itemValue="nom"/>
+				</form:select>
 		</div>
 		<div class="form-group">
 			<form:label path="dateDepart">date de départ</form:label>
