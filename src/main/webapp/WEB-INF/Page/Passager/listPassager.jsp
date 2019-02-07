@@ -23,12 +23,15 @@
 <div class="container">
 <h1>liste des passagers</h1>
 	<div>
-		<a href="addClient" class="btn btn-link">Entrez un nouveau passager ou client</a>
+		<a href="addClientEI" class="btn btn-link">Ajouter un clientEI</a>
+		<a href="addClientMoral" class="btn btn-link">Ajouter un clientMoral</a>
+		<a href="addClientPhysique" class="btn btn-link">Ajouter un clientPhysique</a>
 			
 	</div>
 	<table class="table">
 	
 	<tr>
+			<th>Type</th>
 			<th>client id</th>
 			<th>civilite</th>
 			<th>prenom/siret</th>
@@ -45,7 +48,13 @@
 		</tr>
 		<c:forEach var="c" items="${client}">
 			<tr>
-				
+				<td>
+					<c:choose>
+						<c:when test="${c.getClass().simpleName=='ClientMoral'}">CM</c:when>
+						<c:when test="${c.getClass().simpleName=='ClientEI'}">EI</c:when>
+						<c:otherwise>CP</c:otherwise>
+					</c:choose>
+				</td>
 				<td>${c.id}</td>
 				<c:choose>
 					<c:when test="${c.getClass().simpleName=='ClientMoral'}">
