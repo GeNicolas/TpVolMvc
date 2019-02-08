@@ -34,17 +34,17 @@
 				<tr>
 					<td> ${v.id}</td>
 					<td> ${v.dateDepart}</td>	
-					<td> ${v.AeroportDepart}</td>
+					<td> ${v.aeroportDepart.nom}</td>
 					<td> ${v.dateArrivee}</td>
-					<td> ${v.AeroportArrivee}</td>
-					<td> ${v.compagnieAerienneVol}</td>
-					<td> ${v.escale}</td>
-					<td> ${v.reservations}</td>
+					<td> ${v.aeroportArrivee.nom}</td>
+						<td> 
+						<form:select path="vol">
+							<form:options items="${repovol.findByIdWithReservation(v.id).get().getReservation()}" itemLabel="numero" itemValue="numero"/>
+						</form:select>
+						</td>
 					
-					<td><a class="btn btn-info"
-					href="edit?id=${v.id}">modifier</a></td>
-				<td><a class="btn btn-danger"
-					href="delete?id=${v.id}">supprimer</a></td>
+					<td><a class="btn btn-info" href="edit?id=${v.id}">modifier</a></td>
+				<td><a class="btn btn-danger" href="delete?id=${v.id}">supprimer</a></td>
 					</tr>
 			</c:forEach>
 			
